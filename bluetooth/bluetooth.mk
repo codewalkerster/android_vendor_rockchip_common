@@ -1,3 +1,8 @@
+BT_KO_FILES := $(shell find $(TOPDIR)kernel/drivers/bluetooth -name "*.ko" -type f)
+
+BOARD_VENDOR_KERNEL_MODULES += \
+	$(foreach file, $(BT_KO_FILES), $(file))
+
 CUR_PATH := vendor/rockchip/common/bluetooth
 
 ifeq ($(strip $(BLUETOOTH_USE_BPLUS)),true)
