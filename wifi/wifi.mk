@@ -1,4 +1,4 @@
-WIFI_KO_FILES := $(shell find $(TOPDIR)kernel/drivers/net/wireless $(TOPDIR)kernel/drivers/usb/serial $(TOPDIR)hardware/wifi -name "*.ko" -type f)
+WIFI_KO_FILES := $(shell find $(TOPDIR)kernel/drivers/net/wireless $(TOPDIR)hardware/wifi -name "*.ko" -type f)
 
 BOARD_VENDOR_KERNEL_MODULES += \
 	$(foreach file, $(WIFI_KO_FILES), $(file))
